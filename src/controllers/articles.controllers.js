@@ -13,7 +13,14 @@ const getAllArticles = async (req, res) => {
   res.json({ message: "Articles Found", data: allArticles });
 };
 
+const getArticle = async (req, res)=> {
+  const article = Articles.find(req.params.id)
+  res.json({message: "Article Found", data : article})
+}
+
 module.exports = {
   create,
   getAllArticles,
+  getArticle
 };
+
